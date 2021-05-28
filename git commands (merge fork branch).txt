@@ -1,0 +1,272 @@
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git fetch akarsh
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git merge akarsh/utfix
+Updating b30d25daf..38ffcd72a
+Fast-forward
+ pom.xml                                             | 16 ++++++++++++++++
+ .../java/com/paypal/pricing/kafka/KafkaHelper.java  |  6 +++---
+ .../com/paypal/pricing/kafka/KafkaHelperTest.java   |  2 +-
+ .../service/cache/CachingUtilsForRefreshTest.java   |  8 +++++---
+ .../service/cache/DatabaseCacheLoaderTest.java      | 21 +++++++++++++++++++--
+ .../service/cache/FFXFeePropertyCacheImplTest.java  | 14 ++++++++++++++
+ .../engine/PriceCalculationEngineTest.java          |  2 +-
+ .../model/ValueAddedFeeTypeEvaluatorTest.java       |  3 ++-
+ .../profile/NewAccountLifeCycleServClientTest.java  |  4 ++--
+ .../calculation/tasks/RequestMapperTest.java        |  2 +-
+ .../objects/pricestructure/AuditTrailTest.java      |  6 +++---
+ .../service/tasks/user/APCToolReactiveTest.java     |  6 ------
+ 12 files changed, 67 insertions(+), 23 deletions(-)
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git log
+commit 38ffcd72a0681d7a7699dd8f6bad9df6a1500156 (HEAD -> UTFixes, akarsh/utfix)
+Author: Akarsh <akaryadav@paypal.com>
+Date:   Fri May 21 23:09:23 2021 +0530
+
+    DTGALILEO-66 Reverted RCS hardcode
+
+commit 37b5cee2f5f6b48ac14bf37027f58963e399920e
+Author: Akarsh <akaryadav@paypal.com>
+Date:   Fri May 21 23:05:34 2021 +0530
+
+    DTGALILEO-66 UT FIX
+
+commit 365154bcaccdcfd75b853ce08b7d403eb720d0d1
+Author: Akarsh <akaryadav@paypal.com>
+Date:   Fri May 21 16:40:46 2021 +0530
+
+    DTGALILEO-66 UT FIX
+
+commit 08cf9e548e99e151f3e9040a58bfb0e264510681
+Merge: 86ed8e6ed bb186da92
+Author: durs <durs@paypal.com>
+Date:   Thu May 20 19:07:44 2021 +0530
+
+    Merge pull request #7 from mankrishna/UT_fix
+
+    changed logic of if block
+
+commit bb186da9271dec20ccb8591f8565b639325e67af
+Author: mankrishna <mankrishna@paypal.com>
+Date:   Thu May 20 17:27:24 2021 +0530
+
+    changed logic of if block
+
+commit 86ed8e6ed967acc03bc42679416bab62b9f16e1f
+Merge: f6c94f100 7b9ec0ee8
+Author: durs <durs@paypal.com>
+Date:   Thu May 20 16:43:09 2021 +0530
+
+    Merge pull request #6 from mankrishna/UT_fix
+
+    fixed assetion failures
+
+commit 7b9ec0ee808ee4a65333643e0f2c6cac39111ebe
+Author: mankrishna <mankrishna@paypal.com>
+Date:   Thu May 20 16:23:45 2021 +0530
+
+    fixed assetion failures
+
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git log --oneline
+38ffcd72a (HEAD -> UTFixes, akarsh/utfix) DTGALILEO-66 Reverted RCS hardcode
+37b5cee2f DTGALILEO-66 UT FIX
+365154bca DTGALILEO-66 UT FIX
+08cf9e548 Merge pull request #7 from mankrishna/UT_fix
+bb186da92 changed logic of if block
+86ed8e6ed Merge pull request #6 from mankrishna/UT_fix
+7b9ec0ee8 fixed assetion failures
+f6c94f100 Merge pull request #5 from mankrishna/UT_fix
+71ed528f1 fixed UT's
+fcb6f8e90 add junit4 support
+6eb6b7310 surefire2.19.1
+b30d25daf (upstream/develop, develop) Merge pull request #3139 from alge/specialFeerule
+9db48c78e Merge pull request #3138 from jingbliu/releaseFix
+f4aeb1f9a Merge pull request #3083 from grustagi/reactiveAPI
+fb3f2c3e2 added coverage
+f801badd3 remove duplicates
+da47f6c5a Fixing FT failures
+5eb532a50 Addressing comments
+d93747236 Addressing review comments
+9bdf9110a Removed multiple subscribeOn from code.
+7e3170327 Addressing review comments
+3d7225a12 Updated the review comments , Now using Mono.Supplier instead of completable future
+7f2100447 DTCOSMOS-708 : GETAPC Reactive Changes
+d04c4c9ce fix fee type caching
+7d7c800a1 Fix develop/release conflicts
+f78b767ca Merge pull request #3058 from aartwani/VenmoTenantFix
+0c31b728d updated as per review comments
+a55b9d57a updated as per review comments
+3987e987c Merge pull request #3121 from shikhsingh/l1
+4288162f6 replace the loadALlFromMayfly with method call
+cb01b68eb fixed spelling error
+8b84814fd Merge branch 'develop' into VenmoTenantFix
+6b6f22399 Merge pull request #2701 from shubgupta/get-fee-display-rates
+d5576b4ab Merge pull request #3132 from grustagi/develop
+da0df1196 Adding missing userbridgedomainserv properties in PPES
+4790708c8 added withdrawal fee type FT and removed PCE tenant logic
+510e961ee Merge pull request #3118 from amitagarwal/MinorCalLoggingFix
+51bab221c code cleanup
+fce6ad889 CRC: encapsulating the loadALL in another method
+e2936387f setting warning status: CRC
+7c6a8b683 fallback loadALL in case certain info is absent
+125a7ed0c added FTs and UTs for fallback
+a4f3e37cf Merge branch 'develop' into VenmoTenantFix
+2234d72f3 Merge pull request #5 from xiaotan/VenmoFixPullRequest
+229f7d482 little change on if/else return
+dbd406df6 Merge pull request #3125 from mankrishna/s209_Ftfix
+698edceeb finished reformatting, added UTs
+eaad8c254 add Venmo Tenant Solution, 1: add properties. 2:add Function in CommonUtils to determine fetch from properties or cache 3: add judgment in RequestMapperTask and F
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git status
+On branch UTFixes
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   pricingplatformservCode/pricingplatformCore/src/test/java/com/paypal/pricing/service/cache/DatabaseCacheLoaderTest.java
+        modified:   pricingplatformservCode/pricingplatformCore/src/test/java/com/paypal/pricing/service/cache/FFXFeePropertyCacheImplTest.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git add .
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git commit -m "UT cache issue fixes"
+[UTFixes 529f70115] UT cache issue fixes
+ 2 files changed, 27 insertions(+), 54 deletions(-)
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git push origin UTFixes
+Enumerating objects: 27, done.
+Counting objects: 100% (27/27), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (14/14), 1.26 KiB | 33.00 KiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (7/7), completed with 7 local objects.
+remote:
+remote: Create a pull request for 'UTFixes' on GitHub by visiting:
+remote:      https://github.paypal.com/nsiripurapu/pricingplatformserv/pull/new/UTFixes
+remote:
+To github.paypal.com:nsiripurapu/pricingplatformserv.git
+ * [new branch]          UTFixes -> UTFixes
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git status
+On branch UTFixes
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   pricingplatformservCode/pricingplatformCore/src/test/java/com/paypal/pricing/service/cache/CacheLoaderTest.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git add .
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git commit -m "UT cache issue fixes: CacheLoaderTest:scenario2"
+[UTFixes 9a9e32a56] UT cache issue fixes: CacheLoaderTest:scenario2
+ 1 file changed, 28 insertions(+), 10 deletions(-)
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git push origin UTFixes
+Enumerating objects: 25, done.
+Counting objects: 100% (25/25), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (13/13), 1.31 KiB | 44.00 KiB/s, done.
+Total 13 (delta 6), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (6/6), completed with 6 local objects.
+To github.paypal.com:nsiripurapu/pricingplatformserv.git
+   529f70115..9a9e32a56  UTFixes -> UTFixes
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git status
+On branch UTFixes
+Changes not staged for commit:
+  (use "git add <file>..." to update what will be committed)
+  (use "git restore <file>..." to discard changes in working directory)
+        modified:   pricingplatformservCode/pricingplatformCore/src/test/java/com/paypal/pricing/service/cache/DatabaseCacheLoaderTest.java
+        modified:   pricingplatformservCode/pricingplatformCore/src/test/java/com/paypal/pricing/service/cache/FFXFeePropertyCacheImplTest.java
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git add .
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git commit -m "UT cache issue fixes"
+[UTFixes 0e9b46fc2] UT cache issue fixes
+ 2 files changed, 2 deletions(-)
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git push origin UTFixes
+Enumerating objects: 27, done.
+Counting objects: 100% (27/27), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (12/12), done.
+Writing objects: 100% (14/14), 1022 bytes | 39.00 KiB/s, done.
+Total 14 (delta 7), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (7/7), completed with 7 local objects.
+To github.paypal.com:nsiripurapu/pricingplatformserv.git
+   9a9e32a56..0e9b46fc2  UTFixes -> UTFixes
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=<remote>/<branch> UTFixes
+
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git pull origin UTFixes
+From github.paypal.com:nsiripurapu/pricingplatformserv
+ * branch                UTFixes    -> FETCH_HEAD
+Already up to date.
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git add .
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git commit -m "UT cache issue fixes"
+[UTFixes 6a709b19b] UT cache issue fixes
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git push origin UTFixes
+Enumerating objects: 25, done.
+Counting objects: 100% (25/25), done.
+Delta compression using up to 12 threads
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (13/13), 1012 bytes | 50.00 KiB/s, done.
+Total 13 (delta 4), reused 0 (delta 0), pack-reused 0
+remote: Resolving deltas: 100% (4/4), completed with 4 local objects.
+To github.paypal.com:nsiripurapu/pricingplatformserv.git
+   0e9b46fc2..6a709b19b  UTFixes -> UTFixes
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git stash
+Saved working directory and index state WIP on UTFixes: 6a709b19b UT cache issue fixes
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$ git pull origin UTFixes
+From github.paypal.com:nsiripurapu/pricingplatformserv
+ * branch                UTFixes    -> FETCH_HEAD
+Already up to date.
+
+nsiripurapu@L-SJN-40021716 MINGW64 ~/Desktop/FT/pricingplatformserv (UTFixes)
+$
